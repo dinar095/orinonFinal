@@ -1,0 +1,5 @@
+
+container:
+  image: desausag/go-rest:latest
+replicaCount: 2
+namespace: default

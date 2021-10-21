@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gorest-deployment
+  labels:
+    app: gorest
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gorest
+  template:
+    metadata:
+      labels:
+        app: gorest
+    spec:
+      containers:
+      - name: gorest
+        image: desausag/go-rest:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gorestapp 
+spec:
+  containers:
+  - name: gorestapp
+    image: desausag/go-rest:latest
+  imagePullSecrets:
+  - name: regcred
